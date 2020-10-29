@@ -5,16 +5,22 @@
 	<title>Kakao 지도 시작하기</title>
 </head>
 <body>
-	<div id="map" style="width:500px;height:400px;"></div>
+	<div id="map" style="width:100%;height:100vh;"></div>
 	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=86e7f9a25487eaf17336b42ce0534fcc"></script>
 	<script>
 		var container = document.getElementById('map');
 		var options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			center: new kakao.maps.LatLng(37.224649, 127.089334),
 			level: 3
 		};
 
-		var map = new kakao.maps.Map(container, options);
+        var map = new kakao.maps.Map(container, options);
+        
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        marker.setMap(map);
 	</script>
 </body>
 </html>
